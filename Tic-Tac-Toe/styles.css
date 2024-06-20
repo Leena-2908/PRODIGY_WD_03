@@ -1,0 +1,99 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0; /* Light Gray */
+    font-family: Arial, sans-serif;
+    color: #4c4d4a; /* Dark Gray */
+}
+
+.container {
+    text-align: center;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 10px;
+    margin: 20px auto;
+    border: 2px solid #3498db; /* Belize Hole */
+    width: 320px;
+    padding: 10px;
+    background-color: #ffaaa5; /* First Color */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(231, 93, 28, 0.2); /* Soft shadow */
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #fcf8f3; /* Second Color */
+    border: 1px solid #ffd3b6; /* Third Color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cell:hover {
+    background-color: #ffd3b6; /* Third Color */
+    transform: scale(1.05);
+}
+
+.cell.occupied {
+    pointer-events: none; /* Disable clicks on occupied cells */
+}
+
+.cell.winning-cell {
+    color: #faf733; /* Fourth Color */
+    font-weight: bold;
+}
+
+.cell.winning-x {
+    background-color: #ffd700; /* Gold */
+}
+
+.cell.winning-o {
+    background-color: #ff5733; /* Orange Red */
+}
+
+.status {
+    margin-top: 20px;
+    font-size: 1.5em;
+}
+
+button {
+    margin-top: 20px;
+    font-size: 1em;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #e74c3c; /* Alizarin */
+    color: #fff; /* White */
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #c0392b; /* Pomegranate (Darker) */
+}
+
+.board.game-over {
+    animation: celebration 0.5s ease;
+}
+
+@keyframes celebration {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
